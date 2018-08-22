@@ -35,7 +35,7 @@ var resolver = new mod_resolver.VmapiResolver({
 	'tags': { /* NIC and VM tags */
 		'vm_tag_name': 'manta_role',
 		'vm_tag_value': 'postgres',
-		'nic_tag': 'manta'
+		'nic_tag': 'manta.*' /* regexp-based match */
 	},
 	'backend_port': 5432 /* port number of the listening process */
 });
