@@ -1,6 +1,6 @@
 {
   "name": "vmapi-resolver",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "node-cueball resolver using VMAPI",
   "repository": {
     "url": "https://github.com/joyent/node-vmapi-resolver.git",

@@ -34,7 +34,7 @@ var resolver = new mod_resolver.VmapiResolver({
 	'pollInterval': 600000, /* poll VMAPI every 10 minutes */
 	'tags': { /* NIC and VM tags */
 		'vm_tag_name': 'manta_role',
-		'vm_tag_value': 'postgres',
+		'vm_tag_value': '*postgres', /* VMAPI's wildcard matching */
 		'nic_tag': 'manta.*' /* regexp-based match */
 	},
 	'backend_port': 5432 /* port number of the listening process */
@@ -50,6 +50,10 @@ resolver.on('removed', function (backend) {
 
 resolver.start();
 ```
+
+Each backend has a "tag" object that details the matched tag name and value from
+the query to VMAPI, but only if an exact match can be found in the tag name
+(i.e. no wildcard is used in "vm_tag_name").
 
 ## License
 
